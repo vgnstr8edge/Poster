@@ -59,7 +59,7 @@ class PosterManagerTestWithSetup {
         manager.add(tenth);
         manager.add(eleventh);
 
-        MovieItem[] expected = new MovieItem[] {tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
+        MovieItem[] expected = new MovieItem[] {eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
         MovieItem[] actual = manager.getAll();
 
         assertArrayEquals(expected, actual);

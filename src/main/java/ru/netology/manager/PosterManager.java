@@ -1,9 +1,8 @@
 package ru.netology.manager;
 
-import lombok.Data;
+
 import ru.netology.domain.MovieItem;
 
-@Data
 public class PosterManager {
     private MovieItem[] movies = new MovieItem[0];
     private int anyAmountOfFilm = 10;
@@ -34,25 +33,29 @@ public class PosterManager {
         }
 
         MovieItem[] result = new MovieItem[resultLenth];
-        // перебираем массив в прямом порядке
-        // но кладём в результаты в обратном
         for (int i = 0; i < resultLenth; i++) {
-            int index = resultLenth - i - 1;
-            result[i] = movies[index];
+            if (movies.length > anyAmountOfFilm) {
+                int index = resultLenth - i;
+                result[i] = movies[index];
+            } else {
+                int index = resultLenth - i - 1;
+                result[i] = movies[index];
+            }
         }
         return result;
     }
 
 
     public PosterManager() {
-    }
-
-    public PosterManager(int anyAmountOfFilm) {
-        if (anyAmountOfFilm <= 0) {
-            return;
         }
-        this.anyAmountOfFilm = anyAmountOfFilm;
+
+
+    public PosterManager( int anyAmountOfFilm){
+            if (anyAmountOfFilm <= 0) {
+                return;
+            }
+            this.anyAmountOfFilm = anyAmountOfFilm;
+        }
     }
 
-}
 

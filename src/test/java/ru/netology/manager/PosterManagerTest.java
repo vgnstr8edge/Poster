@@ -63,7 +63,7 @@ class PosterManagerTest {
         manager.add(fifth);
         manager.add(sixth);
 
-        MovieItem[] expected = new MovieItem[] {fifth, fourth, third, second, first};
+        MovieItem[] expected = new MovieItem[] {sixth, fifth, fourth, third, second};
         MovieItem[] actual = manager.getAll();
 
         assertArrayEquals(expected, actual);
