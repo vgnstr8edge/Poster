@@ -47,7 +47,7 @@ class PosterManagerTest {
     }
 
     @Test
-    public void shouldUseSixFilms() {
+    public void shouldUseSeventhFilms() {
 
         MovieItem first = new MovieItem(1, 1, "first", "action");
         MovieItem second = new MovieItem(2, 2, "second", "drama");
@@ -55,6 +55,7 @@ class PosterManagerTest {
         MovieItem fourth = new MovieItem(4, 4, "fourth", "comedy");
         MovieItem fifth = new MovieItem(5, 5, "fifth", "action");
         MovieItem sixth = new MovieItem(6, 6, "sixth", "thriller");
+        MovieItem seventh = new MovieItem(7, 7, "seventh", "action");
 
         manager.add(first);
         manager.add(second);
@@ -62,8 +63,9 @@ class PosterManagerTest {
         manager.add(fourth);
         manager.add(fifth);
         manager.add(sixth);
+        manager.add(seventh);
 
-        MovieItem[] expected = new MovieItem[] {sixth, fifth, fourth, third, second};
+        MovieItem[] expected = new MovieItem[] {seventh, sixth, fifth, fourth, third};
         MovieItem[] actual = manager.getAll();
 
         assertArrayEquals(expected, actual);

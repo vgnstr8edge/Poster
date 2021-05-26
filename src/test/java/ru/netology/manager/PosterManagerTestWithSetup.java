@@ -19,6 +19,7 @@ class PosterManagerTestWithSetup {
     private MovieItem ninth = new MovieItem(9, 9, "ninth", "sport");
     private MovieItem tenth = new MovieItem(10, 10, "tenth", "comedy");
     private MovieItem eleventh = new MovieItem(11, 11, "eleventh", "action");
+    private MovieItem twelfth = new MovieItem(12, 12, "twelfth", "action");
 
     @BeforeEach
     public void setUp() {
@@ -55,11 +56,12 @@ class PosterManagerTestWithSetup {
 
 
     @Test
-    public void shouldElevenFilms() {
+    public void shouldTwelfthFilms() {
         manager.add(tenth);
         manager.add(eleventh);
+        manager.add(twelfth);
 
-        MovieItem[] expected = new MovieItem[] {eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
+        MovieItem[] expected = new MovieItem[] {twelfth, eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third};
         MovieItem[] actual = manager.getAll();
 
         assertArrayEquals(expected, actual);
